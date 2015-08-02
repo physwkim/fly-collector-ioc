@@ -1,3 +1,2 @@
-# timestamp
 Epics Timestamp Buffer 
 ======================
