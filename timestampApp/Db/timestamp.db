@@ -1,7 +1,7 @@
 record(stringin, "$(Sys)$(Dev)Val:Time-I"){
 	field(DTYP, "Soft Timestamp")
 	field(SCAN, "Passive")
-	field(INP, "@%s.%f")
+	field(INP,  "@%s.%f")
 	field(SDIS, "$(Inp) CP")
 	field(DISA, "-1")
 	field(TSEL, "$(Inp).TIME CA")
@@ -31,19 +31,32 @@ record(aSub, "$(Sys)$(Dev)-aSub"){
 	field(FTVB, "LONG")
 	field(NOVC, "1")
 	field(FTVC, "LONG")
-	field(FLNK, "$(Sys)$(Dev)Val:Time-Wfrm")
+	field(FLNK, "$(Sys)$(Dev)-Fout_")
+}
+
+record(fanout, "$(Sys)$(Dev)-Fout_"){
+	field(LNK1, "$(Sys)$(Dev)Val:Time-Wfrm")
+	field(LNK2, "$(Sys)$(Dev)Val:TimeN-I")
+	field(LNK3, "$(Sys)$(Dev)Sts-Sts")
 }
 
 record(waveform, "$(Sys)$(Dev)Val:Time-Wfrm"){
-	field(INP,  "$(Sys)$(Dev)-aSub.VALA NPP NMS")
+	field(INP,  "$(Sys)$(Dev)-aSub.VALA NPP MS")
 	field(NORD, "10")
 	field(NELM, "1000000")
 	field(FTVL, "DOUBLE")
-	field(FLNK, "$(Sys)$(Dev)Val:TimeN-I")
 }
 
 record(longin, "$(Sys)$(Dev)Val:TimeN-I"){
-	field(INP,  "$(Sys)$(Dev)-aSub.VALB NPP NMS")
+	field(INP,  "$(Sys)$(Dev)-aSub.VALB NPP MS")
 }
 
-
+record(mbbi, "$(Sys)$(Dev)Sts-Sts"){
+	field(INP,  "$(Sys)$(Dev)-aSub.VALC NPP MS")
+	field(ZRST, "OK")
+	field(ONST, "FULL")
+	field(ZRVL, "0")
+	field(ONVL, "1")
+	field(ZRSV, "NO_ALARM")
+	field(ONSV, "MAJOR")
+}
