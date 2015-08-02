@@ -1,0 +1,49 @@
+record(stringin, "$(Sys)$(Dev)Val:Time-I"){
+	field(DTYP, "Soft Timestamp")
+	field(SCAN, "Passive")
+	field(INP, "@%s.%f")
+	field(SDIS, "$(Inp) CP")
+	field(DISA, "-1")
+	field(TSEL, "$(Inp).TIME CA")
+	field(FLNK, "$(Sys)$(Dev)-aSub")
+}
+
+record(mbbo, "$(Sys)$(Dev)Sw-Sel"){
+	field(ZRST, "IDLE")
+	field(ONST, "CAPTURE")
+	field(TWST, "RESET")
+	field(ZRVL, "0")
+	field(ONVL, "1")
+	field(TWVL, "2")
+}
+
+record(aSub, "$(Sys)$(Dev)-aSub"){
+	field(SNAM, "buffer")
+	field(NOA,  "1")
+	field(NOB,  "1")
+	field(FTA,  "LONG")
+	field(FTB,  "DOUBLE")
+	field(INPA, "$(Sys)$(Dev)Sw-Sel NPP NMS")
+	field(INPB, "$(Sys)$(Dev)Val:Time-I NPP NMS")
+	field(NOVA, "1000000")
+	field(FTVA, "DOUBLE")
+	field(NOVB, "1")
+	field(FTVB, "LONG")
+	field(NOVC, "1")
+	field(FTVC, "LONG")
+	field(FLNK, "$(Sys)$(Dev)Val:Time-Wfrm")
+}
+
+record(waveform, "$(Sys)$(Dev)Val:Time-Wfrm"){
+	field(INP,  "$(Sys)$(Dev)-aSub.VALA NPP NMS")
+	field(NORD, "10")
+	field(NELM, "1000000")
+	field(FTVL, "DOUBLE")
+	field(FLNK, "$(Sys)$(Dev)Val:TimeN-I")
+}
+
+record(longin, "$(Sys)$(Dev)Val:TimeN-I"){
+	field(INP,  "$(Sys)$(Dev)-aSub.VALB NPP NMS")
+}
+
+
