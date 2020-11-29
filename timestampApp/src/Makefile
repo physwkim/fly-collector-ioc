@@ -17,10 +17,15 @@ timestamp_DBD += base.dbd
 timestamp_DBD += buffer.dbd
 
 # Include dbd files from all support applications:
-#timestamp_DBD += xxx.dbd
+timestamp_DBD += devIocStats.dbd
+timestamp_DBD += asSupport.dbd
+timestamp_DBD += system.dbd
+timestamp_DBD += caPutLog.dbd
 
 # Add all the support libraries needed by this IOC
-#timestamp_LIBS += xxx
+timestamp_LIBS += devIocStats
+timestamp_LIBS += autosave
+timestamp_LIBS += caPutLog
 
 # timestamp_registerRecordDeviceDriver.cpp derives from timestamp.dbd
 timestamp_SRCS += timestamp_registerRecordDeviceDriver.cpp

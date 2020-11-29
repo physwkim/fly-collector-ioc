@@ -1,0 +1,7 @@
+# global config file for softioc start script
+NAME=es-timestamp
+PORT=4200
+USER=softioc
+HOST=xf23id1-ioc2
+
+
