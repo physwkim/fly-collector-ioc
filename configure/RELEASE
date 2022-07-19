@@ -26,7 +26,7 @@ TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
 
 # EPICS_BASE usually appears last so other apps can override stuff:
 EPICS_BASE=/usr/local/epics/base
-SUPPORT=/usr/local/epics/synApps
+SUPPORT=/usr/local/epics/synApps/support
 
 # Set RULES here if you want to take build rules from somewhere
 # other than EPICS_BASE:
