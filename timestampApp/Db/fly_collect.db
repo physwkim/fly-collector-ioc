@@ -1,0 +1,46 @@
+record(aSub, "$(Sys)$(Dev)-aSub"){
+	field(SNAM, "bufferD")
+	field(NOA,  "1")
+	field(NOB,  "1")
+	field(NOC,  "1")
+	field(FTA,  "LONG")
+	field(FTB,  "DOUBLE")
+	field(FTC,  "LONG")
+	field(INPA, "$(Sys)Sw-Sel NPP NMS")
+	field(INPB, "$(Inp) CP NMS")
+    field(INPC, "$(Idx)")
+	field(NOVA, "1000000")
+	field(FTVA, "DOUBLE")
+	field(NOVB, "1")
+	field(FTVB, "LONG")
+	field(NOVC, "1")
+	field(FTVC, "LONG")
+	field(FLNK, "$(Sys)$(Dev)-Fout_")
+}
+
+record(fanout, "$(Sys)$(Dev)-Fout_"){
+	field(LNK1, "$(Sys)$(Dev)Val:Data-Wfrm")
+	field(LNK2, "$(Sys)$(Dev)Val:DataN-I")
+	field(LNK3, "$(Sys)$(Dev)Sts-Sts")
+}
+
+record(waveform, "$(Sys)$(Dev)Val:Data-Wfrm"){
+	field(INP,  "$(Sys)$(Dev)-aSub.VALA NPP MS")
+	field(NORD, "10")
+	field(NELM, "1000000")
+	field(FTVL, "DOUBLE")
+}
+
+record(longin, "$(Sys)$(Dev)Val:DataN-I"){
+	field(INP,  "$(Sys)$(Dev)-aSub.VALB NPP MS")
+}
+
+record(mbbi, "$(Sys)$(Dev)Sts-Sts"){
+	field(INP,  "$(Sys)$(Dev)-aSub.VALC NPP MS")
+	field(ZRST, "OK")
+	field(ONST, "FULL")
+	field(ZRVL, "0")
+	field(ONVL, "1")
+	field(ZRSV, "NO_ALARM")
+	field(ONSV, "MAJOR")
+}

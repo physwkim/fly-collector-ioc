@@ -15,6 +15,7 @@ DBD += timestamp.dbd
 # timestamp.dbd will be made up from these files:
 timestamp_DBD += base.dbd
 timestamp_DBD += buffer.dbd
+timestamp_DBD += bufferD.dbd
 
 # Include dbd files from all support applications:
 timestamp_DBD += devIocStats.dbd
@@ -33,6 +34,7 @@ timestamp_SRCS += timestamp_registerRecordDeviceDriver.cpp
 # Build the main IOC entry point on workstation OSs.
 timestamp_SRCS_DEFAULT += timestampMain.cpp
 timestamp_SRCS_DEFAULT += buffer.c
+timestamp_SRCS_DEFAULT += bufferD.c
 timestamp_SRCS_vxWorks += -nil-
 
 # Add support from base/src/vxWorks if needed

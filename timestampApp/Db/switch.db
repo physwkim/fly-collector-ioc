@@ -1,0 +1,9 @@
+record(mbbo, "$(Sys)Sw-Sel"){
+	field(ZRST, "IDLE")
+	field(ONST, "CAPTURE")
+	field(TWST, "RESET")
+	field(ZRVL, "0")
+	field(ONVL, "1")
+	field(TWVL, "2")
+}
+
