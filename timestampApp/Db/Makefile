@@ -13,6 +13,7 @@ include $(TOP)/configure/CONFIG
 DB += timestamp.db
 DB += fly_collect.db
 DB += switch.db
+DB += fanout.db
 
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add

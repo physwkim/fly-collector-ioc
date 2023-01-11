@@ -7,7 +7,7 @@ record(aSub, "$(Sys)$(Dev)-aSub"){
 	field(FTB,  "DOUBLE")
 	field(FTC,  "LONG")
 	field(INPA, "$(Sys)Sw-Sel NPP NMS")
-	field(INPB, "$(Inp) CP NMS")
+	field(INPB, "$(Inp) CA NMS")
     field(INPC, "$(Idx)")
 	field(NOVA, "1000000")
 	field(FTVA, "DOUBLE")

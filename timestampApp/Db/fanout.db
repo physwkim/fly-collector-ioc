@@ -1,0 +1,20 @@
+record(ai, $(Sys)Trigger){
+    field(INP, "$(Signal) CP NMS")
+    field(FLNK, "$(Sys)Fout_1")
+}
+
+record(fanout, "$(Sys)Fout_1"){
+    field(LNK1, "$(Sys)$(Dev1)-aSub")
+    field(LNK2, "$(Sys)$(Dev2)-aSub")
+    field(LNK3, "$(Sys)$(Dev3)-aSub")
+    field(LNK4, "$(Sys)$(Dev4)-aSub")
+    field(LNK5, "$(Sys)$(Dev5)-aSub")
+    field(LNK6, "$(Sys)Fout_2")
+}
+
+record(fanout, "$(Sys)Fout_2"){
+    field(LNK1, "$(Sys)$(Dev6)-aSub")
+    field(LNK2, "$(Sys)$(Dev7)-aSub")
+    field(LNK3, "$(Sys)$(Dev8)-aSub")
+    field(LNK4, "$(Sys)$(Dev9)-aSub")
+}
